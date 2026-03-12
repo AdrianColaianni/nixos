@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ./hosts.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -129,6 +130,7 @@
       hyprshot
       brightnessctl
       tmux
+      btop
     ];
   };
 
