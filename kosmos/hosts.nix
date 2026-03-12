@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 { networking.hosts = {
+  "127.0.0.1" = ["s3"];
   "10.5.1.1" = ["colaianni.us" "mail.colaianni.us"];
   "10.5.1.2" = ["rathaus.red"];
   "10.5.1.3" = ["bigmac.colaianni.us"];
