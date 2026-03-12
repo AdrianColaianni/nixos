@@ -34,7 +34,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.noto
     nerd-fonts.commit-mono
-    fira-code
+    nerd-fonts.fira-code
     jost
     besley
     fira-code-symbols
