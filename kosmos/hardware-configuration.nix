@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -32,6 +32,8 @@
     };
 
   boot.initrd.luks.devices."system".device = "/dev/disk/by-uuid/b0678c99-aa87-4794-8842-2e9a10b9486f";
+  boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/a8d2792b-6eec-4e5f-a36f-6fc0d2639b28";
+
 
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/D16B-159B";
@@ -39,7 +41,7 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
-  swapDevices = [ ];
+  swapDevices = [ { device = "/dev/mapper/swap"; } ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

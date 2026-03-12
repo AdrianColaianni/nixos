@@ -44,6 +44,7 @@
   ];
 
   services.pcscd.enable = true;
+  programs.mtr.enable = true;
   programs.gnupg.agent.enable = true;
 
   programs.hyprland = {
@@ -86,6 +87,11 @@
     # If you want to use JACK applications, uncomment the following
     jack.enable = true;
   };
+
+  services.logind.settings.Login.HandleLidSwitch = "suspend-then-hibernate";
+  systemd.sleep.extraConfig = ''
+    HibernateDelaySec=15min
+  '';
 
   security.sudo.extraRules= [
     {  users = [ "adrian" ];
