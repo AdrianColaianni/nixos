@@ -126,6 +126,9 @@
       swaybg
       dunst
       xremap
+      hyprshot
+      brightnessctl
+      tmux
     ];
   };
 
