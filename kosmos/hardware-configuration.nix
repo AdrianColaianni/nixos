@@ -10,6 +10,7 @@
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" ];
   boot.initrd.kernelModules = [ ];
+  boot.initrd.systemd.enable = true;
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -31,8 +32,14 @@
       options = [ "subvol=@home" ];
     };
 
-  boot.initrd.luks.devices."system".device = "/dev/disk/by-uuid/b0678c99-aa87-4794-8842-2e9a10b9486f";
-  boot.initrd.luks.devices."swap".device = "/dev/disk/by-uuid/a8d2792b-6eec-4e5f-a36f-6fc0d2639b28";
+  boot.initrd.luks.devices."system" = {
+    device = "/dev/disk/by-uuid/b0678c99-aa87-4794-8842-2e9a10b9486f";
+    crypttabExtraOpts = [ "tpm2-device=auto" ];
+  };
+  boot.initrd.luks.devices."swap" = {
+    device = "/dev/disk/by-uuid/a8d2792b-6eec-4e5f-a36f-6fc0d2639b28";
+    crypttabExtraOpts = [ "tpm2-device=auto" ];
+  };
 
 
   fileSystems."/boot" =

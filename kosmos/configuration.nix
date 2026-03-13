@@ -7,7 +7,8 @@
       ./hosts.nix
     ];
 
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.limine.enable = true;
+  boot.loader.limine.secureBoot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "kosmos";
@@ -105,7 +106,7 @@
   users.users.adrian = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
+    #shell = pkgs.zsh;
     packages = with pkgs; [
       neovim
       tree
@@ -137,8 +138,18 @@
       brightnessctl
       tmux
       btop
+      wlsunset
+      easyeffects
+      kdePackages.kdeconnect-kde
+      libreoffice
+      mpd
+      mpd-mpris
+      ncmpcpp
+      playerctl
+      wev
     ];
   };
+  users.defaultUserShell = pkgs.zsh;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.11";
