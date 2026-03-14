@@ -147,6 +147,8 @@
       ncmpcpp
       playerctl
       wev
+      simple-http-server
+      direnv
     ];
   };
   users.defaultUserShell = pkgs.zsh;
