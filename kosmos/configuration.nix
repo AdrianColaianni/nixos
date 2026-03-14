@@ -131,7 +131,7 @@
       sxiv
       fzf
       kdePackages.dolphin
-      swaybg
+      swww
       dunst
       xremap
       hyprshot
@@ -149,6 +149,8 @@
       wev
       simple-http-server
       direnv
+      gimp
+      mpv
     ];
   };
   users.defaultUserShell = pkgs.zsh;
