@@ -103,6 +103,9 @@
     }
   ];
 
+  # This allows me to use rustup
+  programs.nix-ld.enable = true;
+
   users.users.adrian = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
