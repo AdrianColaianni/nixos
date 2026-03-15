@@ -154,6 +154,8 @@
       direnv
       gimp
       mpv
+      yt-dlp
+      pulsemixer
     ];
   };
   users.defaultUserShell = pkgs.zsh;
