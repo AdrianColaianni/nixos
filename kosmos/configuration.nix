@@ -106,6 +106,9 @@
   # This allows me to use rustup
   programs.nix-ld.enable = true;
 
+  # Secret service
+  services.gnome.gnome-keyring.enable = true;
+
   users.users.adrian = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -156,6 +159,7 @@
       mpv
       yt-dlp
       pulsemixer
+      bat
     ];
   };
   users.defaultUserShell = pkgs.zsh;
