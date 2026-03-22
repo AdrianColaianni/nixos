@@ -164,6 +164,8 @@
       yt-dlp
       pulsemixer
       bat
+      bc
+      qalculate-gtk
     ];
   };
   users.defaultUserShell = pkgs.zsh;
