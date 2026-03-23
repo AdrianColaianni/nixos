@@ -7,15 +7,13 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dwl-source = {
-      url = "github:djpohly/dwl";
-      flake = false;
-    };
+    hyprland.url = "github:hyprwm/Hyprland?ref=v0.54.2-b";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }: {
+  outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
     nixosConfigurations.kosmos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
       modules = [
         ./kosmos/configuration.nix
         home-manager.nixosModules.home-manager
