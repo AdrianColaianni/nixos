@@ -168,6 +168,7 @@
       bat
       bc
       qalculate-gtk
+      _4d-minesweeper
     ];
   };
   users.defaultUserShell = pkgs.zsh;
