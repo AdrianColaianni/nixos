@@ -111,10 +111,6 @@
   # Secret service
   services.gnome.gnome-keyring.enable = true;
 
-  # Laptop stuff
-  powerManagement.enable = true;
-  services.tlp.enable = true;
-
   users.users.adrian = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];

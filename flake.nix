@@ -8,6 +8,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland?ref=v0.54.2-b";
+
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
@@ -25,6 +27,7 @@
             backupFileExtension = "backup";
           };
         }
+        inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
       ];
     };
   };
