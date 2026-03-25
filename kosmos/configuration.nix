@@ -111,6 +111,11 @@
   # Secret service
   services.gnome.gnome-keyring.enable = true;
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
+
   users.users.adrian = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" ];
