@@ -1,5 +1,5 @@
 {
-  description = "NixOS from Scratch";
+  description = "Cannoli Net NixOS";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-25.11";
