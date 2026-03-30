@@ -10,6 +10,11 @@
     hyprland.url = "github:hyprwm/Hyprland?ref=v0.54.2-b";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    dwl-source = {
+      url = "github:djpohly/dwl";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... } @ inputs: {
@@ -18,6 +23,7 @@
       specialArgs = { inherit inputs; };
       modules = [
         ./kosmos/configuration.nix
+        ./programs/dwl/dwl.nix
         home-manager.nixosModules.home-manager
         {
           home-manager = {
